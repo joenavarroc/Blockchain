@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blockchain</title>
+</head>
+<body>
+    <h1>Lista de Bloques en la Blockchain</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Hash</th>
+                <th>Previous Hash</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iteramos sobre la blockchain y mostramos los bloques -->
+            <tr th:each="block : ${blockchain}">
+                <td th:text="${block.data}">Data</td>
+                <td th:text="${block.hash}">Hash</td>
+                <td th:text="${block.previousHash}">Previous Hash</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

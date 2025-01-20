@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Blockchain</title>
+</head>
+<body>
+    <h1>Resultado de la Validación de la Blockchain</h1>
+
+    <!-- Mostrar el resultado de la validación -->
+    <p th:text="${resultado}">Resultado de la validación</p>
+
+    <!-- Mostrar los bloques de la blockchain -->
+    <h2>Bloques de la Blockchain:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Datos</th>
+                <th>Hash</th>
+                <th>Hash Anterior</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Corregir la referencia a los campos de Block -->
+            <tr th:each="block : ${blockchain}">
+                <td th:text="${block.data}">Datos</td>
+                <td th:text="${block.hash}">Hash</td>
+                <td th:text="${block.previousHash}">Hash Anterior</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Enlace para volver a la vista de blockchain -->
+    <a href="/medicos/blockchain">Ver Blockchain</a>
+</body>
+</html>
